@@ -2,6 +2,8 @@
 
 A telegram bot that download video to local directory built with teloxide
 
+Just send or forward a video to bot and it will be saved to configured directory
+
 ```
 tgbot-downloader 
 
@@ -23,3 +25,4 @@ OPTIONS:
     -t, --token <TOKEN>
 ```
 
+![sc](misc/sc.png)
