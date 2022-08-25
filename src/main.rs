@@ -19,7 +19,7 @@ async fn handler(message:Message, bot: AutoSend<Bot>) -> Result<(), teloxide::Re
         let video_file = bot.get_file(v.file_id.clone()).send().await;
         if let Ok(f) = video_file {
             debug!("File accquired");
-            let file_path = ARGS.path.clone() + v.file_name.clone().unwrap_or(f.file_id).as_str();
+            let file_path = ARGS.path.clone() + "/" + v.file_name.clone().unwrap_or(f.file_id).as_str();
             debug!("Saving to {}", file_path);
             let mut file = File::create(file_path.clone()).await.unwrap();
             debug!("File created, initiating download");
@@ -39,7 +39,7 @@ async fn handler(message:Message, bot: AutoSend<Bot>) -> Result<(), teloxide::Re
 struct Args {
     #[clap(short, long, value_parser)]
     token: String,
-    #[clap(short, long, value_parser, default_value = "./")]
+    #[clap(short, long, value_parser, default_value = ".")]
     path: String,
     /// Loglevel: debug, info, warn, error, default = info
     #[clap(short, long, value_parser, default_value = "info")]
