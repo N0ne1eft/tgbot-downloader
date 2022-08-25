@@ -1,0 +1,14 @@
+[package]
+name = "tgbot-downloader"
+version = "1.0.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = { version = "3.2.17", features = ["derive"] }
+lazy_static = "1.4.0"
+tokio = { version =  "1.8", features = ["rt-multi-thread", "macros"] }
+teloxide = { version = "0.9", features = ["macros", "auto-send"] }
+pretty_env_logger = "0.4"
+log = "0.4"
